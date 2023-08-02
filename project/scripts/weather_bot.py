@@ -6,34 +6,34 @@ from datetime import datetime, timedelta
 import psycopg2
 import logging
 
-conn = ''
-curs = ''
+conn = ""
+curs = ""
 DB_CONNECTION_LINK = ""
 BOT = telebot.TeleBot("your_bot_token")
 API = ""
 HELP_COMMAND = "Бот выводит погодные условия введенного города," \
                "а также местную дату и время"
 
-py_logger = logging.getLogger('weather_bot')
+py_logger = logging.getLogger("weather_bot")
 py_logger.setLevel(logging.INFO)
 
-datefmt = '%Y-%m-%d %H:%M:%S'
-strfmt='%(asctime)s : [%(levelname)s] : %(name)s : %(message)s'
+date_fmt = "%Y-%m-%d %H:%M:%S"
+str_fmt = "%(asctime)s : [%(levelname)s] : %(name)s : %(message)s"
 
-py_handler = logging.FileHandler(f"../weather_bot.log", mode='a')
-py_formatter = logging.Formatter(fmt=strfmt, datefmt=datefmt)
+py_handler = logging.FileHandler(f"../weather_bot.log", mode="a")
+py_formatter = logging.Formatter(fmt=str_fmt, datefmt=date_fmt)
 
 py_handler.setFormatter(py_formatter)
 py_logger.addHandler(py_handler)
 
 
-@BOT.message_handler(commands=['start'])
+@BOT.message_handler(commands=["start"])
 def start(message):
     BOT.send_message(message.chat.id, "Привет, напиши название города и страну"
                                       "в таком формате:\n\nПариж, Франция")
 
 
-@BOT.message_handler(commands=['help'])
+@BOT.message_handler(commands=["help"])
 def help(message):
     BOT.send_message(message.chat.id, HELP_COMMAND)
 
