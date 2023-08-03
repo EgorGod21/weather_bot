@@ -1,10 +1,10 @@
-import xml.etree.ElementTree as ElementTree
 import requests
 import telebot
 import pytz
-from datetime import datetime, timedelta
 import psycopg2
 import logging
+from datetime import datetime, timedelta
+import xml.etree.ElementTree as ElementTree
 
 conn = ""
 curs = ""
