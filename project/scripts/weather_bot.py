@@ -20,7 +20,7 @@ py_logger.setLevel(logging.INFO)
 date_fmt = "%Y-%m-%d %H:%M:%S"
 str_fmt = "%(asctime)s : [%(levelname)s] : %(name)s : %(message)s"
 
-py_handler = logging.FileHandler(f"../weather_bot.log", mode="a")
+py_handler = logging.FileHandler(f"../../weather_bot.log", mode="a", encoding="utf8")
 py_formatter = logging.Formatter(fmt=str_fmt, datefmt=date_fmt)
 
 py_handler.setFormatter(py_formatter)
