@@ -17,7 +17,7 @@ variable `API` — your [API key](https://home.openweathermap.org/api_keys), to ge
 the API key you need to register. You can read weather [API documentation.](https://openweathermap.org/current)
 
 Even before starting, you need to execute a sql query from a file `init.sql` in 
-your chosen DBMS (I used PostgreSQL)
+your chosen DBMS (I used PostgreSQL).
 
 Project logs will be kept in file `weather_bot.log`.
 
